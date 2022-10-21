@@ -1,0 +1,115 @@
+SELECTORS
+
+    1--> Universal Selector
+            The universal selector will select elements of any type, hence the name “universal”, and the syntax for it is a simple asterisk.
+
+            * {
+                color: purple;
+            }
+            --> aqui todos os elementos teriam esta cor aplicada
+    
+    2--> Type Selector
+            Vamos selecionar elementos de um só tipi
+
+            <div><h1>Casa<h1></div>
+            <p>Home<p>
+
+            /*style.css*/
+            div {
+                color: white;
+            } 
+            --> vamos apenas no focar nas divs
+    
+    3--> Class Selector
+            Vamos focar-nos nos elementos com um classe dada. Podemos usar a mesma classe para várias coisas. Podemos dar multiplas classses a um objeto.
+
+            <div class="alert-text">
+                Please agree
+            </div>
+
+            .alert-text {
+                color: red;
+            }
+
+            <div class="alert-text severe-text house-text">
+                Please agree
+            </div>
+
+            .alert-text {
+                color: red;
+            }
+
+    4--> ID Selector
+            Selecionamos um elemento com um id único. Cada elemento tem um id único.
+            
+            <div id="title">My Awesome 90's Page</div>
+
+            #title {
+                background-color: red;
+            }
+
+    5--> Grouping Selectors
+            Quando grupos de elementos partilham a mesma style declaration
+
+            .read {
+                color: white;
+                background-color: black;
+                /* several unique declarations */
+            }
+
+            .unread {
+                color: white;
+                background-color: black;
+                /* several unique declarations */
+            }
+
+            
+            Colocamos tudo numa única declaração
+            .read,
+            .unread {
+                color: white;
+                background-color: black;
+            }
+    
+    6--> Grouping Selectors
+            Se quisermos aplicar uma caraterística a um dos objetos que partilham a mesma classe, mas que tem a 2 classe diferente.
+            Também pode ser usado com IDs
+
+            <div>
+                <div class="subsection header">Latest Posts</div>
+                <p class="subsection preview">This is where a preview for a post might go.</p>
+            </div>
+
+            .subsection.header {
+                color: red;
+            }
+            -->What .subsection.header does is it selects any element that has both the subsection and header classes.
+
+            <div>
+                <div class="subsection header">Latest Posts</div>
+                <p class="subsection" id="preview">This is where a preview for a post might go.</p>
+            </div>
+
+            .subsection.header {
+                color: red;
+            }
+            .subsection#preview {
+                color: blue;
+            }
+
+    7--> Descendant Combinator
+             Vai apenas selecionar os elementos que fazem match com o último seletor, como se fossem "filhos" do antecessor
+             .ancestor .child  --> vai selecionar um elemento com a classe child mas que tem como antecessor a classe ancestor
+
+             <div class="ancestor"> <!-- A -->
+                <div class="contents"> <!-- B -->
+                    <div class="contents"> <!-- C -->
+                    </div>
+                </div>
+            </div>
+            <div class="contents"></div> <!-- D -->
+
+            .ancestor .contents {
+               /* some declarations */
+            }
+            --> Só vao ser afetadas as Classes B e C

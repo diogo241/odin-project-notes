@@ -1,0 +1,17 @@
+PROPERTIES
+
+--> color: text color
+--> background-color
+
+--> font-family: "Times New Roman", sans-serif ---> devemos usar sempre com um fallback.
+--> font-size
+--> font-weight   --> entre 1 e 1000
+        normal --> 400
+        medium --> 500
+        semi-bold --> 600
+        bold --> 700
+--> text-align: alinhamento do texto horizontalmente
+
+--> img
+    --> width
+    --> height

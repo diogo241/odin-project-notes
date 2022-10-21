@@ -1,0 +1,65 @@
+CASCADE CSS
+    --> regras de CSS
+
+    -->child combinator: .class > .second-class
+
+
+    1--> Specificity
+            Uma declaração de CSS mais específica vai se sobrepor às declarações de CSS menos específicas.
+            Inline styles são mais específicos que os selectors. E cada tipo de selector tem a sua especificidade.
+
+            1-ID selectors (most specific selector)
+            2-Class selectors
+            3-Type selectors
+        
+            A especificidade só vai atuar quando um elemento tem multiplas declarações ao mesmo tempo.
+            E é aplicada a ordem acima ID > Class > Type
+
+        Exemplo 1: É mais especifica quando usamos mais class selectors .main.list
+            <div class="main">
+                <div class="list subsection"></div>
+            </div>
+
+            .subsection {
+                color: blue;
+            }
+            .main .list {
+                 color: red;
+            }           
+
+        Exemplo 2: O cascade compara o número de ID e Classes e aplica ao maior número #subsection .main .list 
+        #subsection .list {
+            background-color: yellow;
+            color: blue;
+        }
+            #subsection .main .list {
+            color: red;
+        }
+
+    
+    2--> Inheritance
+            Inheritance refers to certain CSS properties that, when applied to an element, are inherited by that element’s descendants, even if we don’t explicitly write a rule for those descendants.
+
+            <div id="parent">
+                <div class="child"></div>
+            </div>
+
+            #parent {
+                color: red;
+            }
+            .child {
+                color: blue;
+            }
+            --> Despite the parent element having a higher specificity with an ID, the child element would have the color: blue style applied since that declaration directly targets it, while color: red from the parent is only inherited.
+
+
+    3--> Rule Order
+            Quando as regras anteriores não funcionam, é aplicada a regra em último lugar.
+            .alert {
+                color: red;
+            }
+            .warning {
+                color: yellow;
+            }
+            --> Since the .warning rule was the last one defined, and no other factor was able to determine which rule to apply, it’s the one that gets applied to the element.
+
