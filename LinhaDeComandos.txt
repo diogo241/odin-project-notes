@@ -1,0 +1,172 @@
+ATALHOS
+
+--> Colar - Ctrl + Shift + V
+--> Para abrir os ficheiros de um projeto no VSCode - code .  "O ponto abre tudo"
+
+
+
+__________________________________________
+
+****** NAVEGAÇÃO NOS DIRETÓRIOS ******
+_____________________________________________
+
+ls - lista os conteúdos de uma pasta (current directory)
+    ls -F - calssifica os conteúdos adicionando uma marca que indica o tipo de conteúdo
+        / indicates that this is a directory
+        @ indicates a link
+        * indicates an executable
+
+    ls -lh - mostra mais informações para além das pastas (tamanho, data da última alteração, etc)
+    ls -F Desktop - The argument Desktop tells ls that we want a listing of something other than our current working directory
+
+cd - permite mudar o diretório ou subir um diretório. Ex: cd Desktop
+    cd .. - permite-nos subir um diretório
+    cd / - vamos para a raiz
+    cd ../.. - dois níveis para cima
+    
+
+
+The shell interprets a tilde (~) character at the start of a path to mean “the current user’s home directory”. 
+For example, if Nelle’s home directory is /Users/nelle, then ~/data is equivalent to /Users/nelle/data. 
+This only works if it is the first character in the path: here/there/~/elsewhere is not here/there/Users/nelle/elsewhere.
+
+
+
+pwd - dá-nos o diretório onde nos encontrámos
+clear - limpar o terminal
+seta para cima e para baixo para correr os comandos anteriores
+
+--help - permite ver todas as opções para aquele comando. Ex: ls --help
+Similar temos o man, mas que mostra os comandos como página. Ex: man ls
+
+____________
+Tipos de ficheiros dentro da pasta C
+_______________
+    -bin (which is where some built-in programs are stored) 
+    -data (for miscellaneous data files)
+    -Users (where users’ personal directories are located)
+    -tmp (for temporary files that don’t need to be stored long-term)
+
+
+
+_____________________________________________
+
+**** WORKING WITH FILES AND DIRECTORIES *****
+_____________________________________________
+
+-Creating Directories
+
+mkdir - criar um novo diretório
+    mkdir -p - Criamos pastas nos diretorios acima. The -p option allows mkdir to create a directory with nested subdirectories in a single operation:
+    ls -FR - lista todos os subdiretorios dentro do diretorio
+
+
+
+
+
+-Criar ficheiros
+
+nano - When we say, ‘nano is a text editor’ we really do mean ‘text’: it can only work with plain character data, not tables, images, or any other human-friendly media.
+touch - Criar um ficheiro blank, de forma eficiente e sem aparecer o editor.
+rm - remover ficheiros
+
+
+
+
+-Moving files and directories
+
+mv - moving, o primeiro argumento diz nos o que queremos mover e o segundo para onde vamos mover. Em alguns casos isso provoca o renaming do ficheiro.
+    mv thesis/draft.txt thesis/quotes.txt - neste exemplo, o ficheiro sofre o rename para quotes.txt
+
+mv -i - pede por confirmação quando estiver a dar um overwriting, opção que devemos usar.
+
+mv thesis/quotes.txt ./ - o ponto neste caso faz com que o ficheiro seja movido para um subdiretorio dentro do diretorio em que estamos
+
+mv thesis/quotes.txt ../casa - movido para este diretorio, que se encontra acima "é pai"
+
+
+
+
+-Copying files and directories
+
+cp - funciona da mesma maneira que o mv comando, apenas copia em vez de mover
+    
+
+
+
+-Removing files and directories
+
+rm -i - remove ficheiros (apenas funciona em ficheiros, não em folders)
+rm -r -i - remove o diretório e todo o conteúdo do diretório
+
+
+
+-Operations with multiple files and directories
+    cp file.txt casa.txt backup/ - os dois primeiros são os ficheiros a copiar o outro é o diretório para onde vai a cópia.
+
+
+-Using wildcards for accessing multiple files at once
+
+* is a wildcard, which matches zero or more characters. - faz match com tudo ou com a primeira letra quando aplicado no caso 2.
+            1- Let’s consider the shell-lesson-data/exercise-data/proteins directory: *.pdb matches ethane.pdb, propane.pdb, and every file that ends with ‘.pdb’. 
+            2- On the other hand, p*.pdb only matches pentane.pdb and propane.pdb, because the ‘p’ at the front only matches filenames that begin with the letter ‘p’.
+    Ex:  *.dat - match com todos os ficheiros deste tipo
+        p* .dat - match com todos os ficheiros que começam com p (não faz distinção entre a extensão usada)  
+
+
+? is also a wildcard, but it matches exactly one character. - faz o match exato
+            1-So ?ethane.pdb would match methane.pdb whereas *ethane.pdb matches both ethane.pdb, and methane.pdb
+
+-->Wildcards can be used in combination with each other e.g. ???ane.pdb matches three characters followed by ane.pdb, giving cubane.pdb ethane.pdb octane.pdb.
+        
+        Ex. 
+            ls *t*ane.pdb - shows all files whose names contain zero or more characters (*) followed by the letter t, then zero or more characters (*) followed by ane.pdb. This gives ethane.pdb methane.pdb octane.pdb pentane.pdb.
+
+
+_________________________________
+
+**** PIPES AND FILTERS *****
+_________________________________
+
+wc - word count- conta o número de linhas, palavras e caractéres dentro do ficheiro (por esta ordem)
+    --> If we run wc -l instead of just wc, the output shows only the number of lines per file
+    --> The -m and -w options can also be used with the wc command, to show only the number of characters or the number of words in the files
+
+
+
+-Capturing output from commands
+
+wc -l *.pdb > lengths.txt - The greater than symbol, >, tells the shell to redirect the command’s output to a file instead of printing it to the screen. 
+    --> Se não existir ficheiro o mesmo é criado.
+
+cat - concatenate - junta tudo e imprime o conteúdo e os ficheiros um atrás do outro. Basicamente esta função mostra o conteúdo.
+less - his displays a screenful of the file, and then stops. You can go forward one screenful by pressing the spacebar, or back one by pressing b. Press q to quit.
+
+
+
+
+-Filtering output
+sort - ordena o conteúdo
+sort -n - o n especifica a ordenação no caso de ser numérica
+head - diz o número de linhas que queremos do início do ficheiro
+    --> Using -n 1 with head tells it that we only want the first line of the file; -n 20 would get the first 20, and so on. Since sorted-lengths.txt contains the lengths of our files ordered from least to greatest, the output of head must be the file with the fewest lines.
+    Ex: head -n 1 sorted-lenghtd.txt
+tail - diz o número de linhas que queremos do fim do ficheiro
+
+echo - print variáveis string (texto)
+
+> - cria/envia para o ficheiro x,y ou z. E dá overwriting
+>> - anexa a string ao arquivo se ele já existir (ou quando o executamos pela segunda vez).
+
+
+
+
+-Passing output to another command
+$ sort -n lengths.txt | head -n 1 - ordena os numerais do ficheiro lenghts.txt, mas mostra-me só a 1 linha com menor número
+
+
+-PIPES
+The cut command is used to remove or ‘cut out’ certain sections of each line in the file, and cut expects the lines to be separated into columns by a Tab character. 
+A character used in this way is a called a delimiter. In the example above we use the -d option to specify the comma as our delimiter character. 
+We have also used the -f option to specify that we want to extract the second field (column).
+

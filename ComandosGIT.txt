@@ -1,0 +1,24 @@
+1- Criámos um repositório no GitHub
+2- Copiamos a Key SSH 
+3- Terminals --> git clone "Key SSH"
+
+    git remote -v                   --> This will display the URL of the repository you created on GitHub, which is the remote for your local copy
+    git status                      --> Estado dos ficheiros Git
+    git add file_name               --> Colocamos o ficheiro no staging Mode
+    git add .                       --> Colocamos todos os ficheiros alterados em stagging mode
+    git commit -m "Add file_name"   --> Enviamos o ficheiro para o Git. O que está entre "" é o comentário ao commit
+    git log                         --> Mostra-nos todas as alterações realizadas
+    git push                        --> Enviar para o repositório
+
+
+Commands related to a remote repository:
+    git clone git@github.com:USER-NAME/REPOSITORY-NAME.git
+    git push or git push origin main (Both accomplish the same goal in this context)
+Commands related to the workflow:
+    git add .
+    git commit -m "A message describing what you have done to make this snapshot different"
+Commands related to checking status or log history
+    git status
+    git log
+
+        The basic Git syntax is program | action | destination.

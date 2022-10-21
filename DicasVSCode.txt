@@ -1,0 +1,7 @@
+Full Screen Mode - F11
+Open Extensions - CTRL + SHIFT + X
+Encontrar a definicção das variáveis -(podemos também clicar com o botão do lado direito do rato) F12 em cima da variável
+Replace Text - CTRL + H
+Abrir a Command Pallete - CTRL + SHIFT + P
+Procurar por ficheiros - CTRL + P
+

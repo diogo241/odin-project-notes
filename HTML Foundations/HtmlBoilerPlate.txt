@@ -1,0 +1,21 @@
+<html lang="en"></html> --> cada docuemtno tem de ter isto no início. 
+    lang specifies the language of the text content in that element. This attribute is primarily used for improving accessibility of the webpage. It allows assistive technologies, for example screen readers, to adapt according to the language and invoke correct pronunciation.
+
+--> o ! na primeira linha seguido de duas vezes tab preenche automaticamente o espaço
+
+-HEAD ELEMENT
+
+<head> --> colocamos aqui a meta information.
+    'charset' <meta charset="utf-8"> --> devemos semper colocar a codificação da página
+    'title element' <title>My First Webpage</title> --> título da página. Se não incluírmos ela vai buscar o filename
+
+
+-BODY ELEMENT
+
+<body> --> aqui colocamos o texto, imagens, links, listas, etc.
+
+DICA: ! , preenche o tipo de ficheiro automaticamente
+
+<em>    --> itálico
+<strong> --> negrito
+<!-- Comentario em HTML -->
