@@ -6,9 +6,12 @@ BLOCK VS INLINE
     --> display: inline 
         -aparecem em linha com qualquer elemento que tenham ao lado;
         -por exemplo links no texto. O padding e a margin também vão funcionar de maneira diferente.
+        -ocupam apenas o tamnanho do elemento em si
+        -
     
     --> display: inline-block
         -aparecem como elementos inline, mas com o block-style padding e margin.
+        -além disso, face ao inline, permitem definir uma width e height
         ***pouco utilizado, devido à flexbox***
 
 DIVS AND SPANS
@@ -18,4 +21,3 @@ DIVS AND SPANS
         --> permite aplicar estilos a diferentes blocos
     
     --> SPAN é um inline-level element por default. Pode ser usado para agrupar conteúdo em texto ou inline HTML elements;
-    
