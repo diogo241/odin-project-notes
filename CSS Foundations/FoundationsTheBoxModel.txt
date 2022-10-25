@@ -1,0 +1,24 @@
+THE BOX MODEL
+
+box-sizing --> border-box --- o tamanho do conteúdo é subtraído da border e do padding dos elementos;
+
+
+display block:
+    --> The box will break onto a new line.
+    --> Padding, margin and border will cause other elements to be pushed away from the box.
+    --> Vai ocupar os 100% do container
+    --> Muda de linha
+
+display inline:
+    --> The box will not break onto a new line.
+    --> The width and height properties will not apply.
+    --> Vertical padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.
+    --> Horizontal padding, margins, and borders will apply and will cause other inline boxes to move away from the box.
+
+
+display inline-flex:
+    --> coloca os elementos em linha e ocupando o espaço de cada um deles. Podemos aplicar a uma lista.
+
+display flex:
+    --> coloca os elementos a ocupar o seu espaço, mas com a width a 100%.
+
