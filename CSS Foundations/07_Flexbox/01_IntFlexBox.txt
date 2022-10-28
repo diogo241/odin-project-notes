@@ -1,0 +1,6 @@
+Flex Containers and Flex Items
+
+-->A flex container is any element that has display: flex on it. A flex item is any element that lives directly inside of a flex container.
+    -->Flex Container qualquer elemento com display: Flex
+    -->Qualquer elemento pode ser ao mesmo tempo flex container e flex item
+        -->You can also put display: flex on a flex item and then use flexbox to arrange its children.
