@@ -32,3 +32,24 @@ The Flex Shorthand
     
     flex: <positive-number>
         -->Equivalent to flex: <positive-number> 1 0. Makes the flex item flexible and sets the flex basis to zero, resulting in an item that receives the specified proportion of the free space in the flex container. If all items in the flex container use this pattern, their sizes will be proportional to the specified flex factor.
+
+    .child {
+        flex: [flex-grow] [flex-shrink] [flex-basis];
+        flex: [max] [min] [ideal size];
+    }
+
+
+    .child {
+        flex: 1 1 auto;  ---> isto é igual a flex-grow: 1;
+    }
+    -->todos os elementos vão ocupar uma proporção igual do parent
+
+    .child-three {
+        flex: 3 1 auto;
+    }
+    .child-three {
+        flex-grow: 3;
+    }
+    -->este elemento vai ocupar 3 vezes mais espaço
+
+    flex-wrap: wrap; --> se os items não couberem no espaço, passam para a linha seguinte.
