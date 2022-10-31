@@ -1,0 +1,29 @@
+FLEX ALIGNMENT
+
+--> Ao adicionar flex: 1, estamos a indicar para os itens crescerem de modo a ocuparem o espaço disponível.
+    --> No entanto, e se quisermos que mantenham a mesma width mas se distribuam de maneira diferente no container?
+        -->removemos o flex do .item e adicionamos justify-content: space-between to .container
+        
+        -->justify-content alinha os itens no ***main axis***.
+            --> justify-content: space-between - dá espaço pelo container todo;
+            --> justify-content: space-around - mesmo espaço à direita e à esquerda, que é metade da gap;
+            --> justify-content: space-evenly - todos os espaços iguais e espaços em ambos os lados;
+            --> justify-content: center - centra as caixas pelo main axis
+
+        -->align-items alinha os itens no ***cross axis***
+            --> align-items: center - alinha ao centro
+            --> align-items: flex-start - alinha no início do container
+            --> align-items: flex-end - alinha no fim do container
+            --> align-items: strech - coloca com a height do container
+
+    //Align-items e justify content são baseados nos eixos main e cross, o seu alinhamento muda consoante a flex direction usada
+        //flex-direction: collum:
+            --> justify-content alinha na vertical
+            --> align items alinha na horizontal
+
+        //Normalmente o justify-content alinha os itens na vertical (o main axis default é na horizontal)
+        //Align-items alinha na vertical
+
+
+GAP
+    --> Dá espaçamento entre divs

@@ -2,6 +2,7 @@ The Flex Shorthand
 
     -->flex is actually a shorthand for flex-grow, flex-shrink and flex-basis
         --> flex: 1 equates to: flex-grow: 1, flex-shrink: 1, flex-basis: 0
+        -->
     
     Flex-Grow
         -->When we applied flex: 1 to every div inside our container, we were telling every div to grow the same amount. Todas as divs ficam com o mesmo tamanho.
@@ -52,4 +53,10 @@ The Flex Shorthand
     }
     -->este elemento vai ocupar 3 vezes mais espaço
 
+   
+   
     flex-wrap: wrap; --> se os items não couberem no espaço, passam para a linha seguinte.
+    
+
+    Flex-flow 
+        -->combina o flex direction e o flex-wrap

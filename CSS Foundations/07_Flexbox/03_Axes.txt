@@ -8,8 +8,12 @@ FLEX-DIRECTION PROPERTY
     AXES
 
     --> existem 2 eixos nos flex-container: o eixo principal e o cross axis
+    --> o eixo principal normalmente esta na horizontal, o cross é perpendicular a esse eixo
     --> na maior parte dos casos a flex-direction: row, coloca o eixo horizontal da esquerda para a direita. Já a flex-direction: colum, coloca o eixo top to bottom
     
 
     --> quando mudamos a flex-direction para coluna, a flex-basis deixa de ser referir à width e passa a referir-se à height;
+
+
+
     
